@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 1. NAVBAR -->
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo">
+            <a href="#" class="logo">
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">AIFlow</span>
-            </div>
+            </a>
             <nav class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#solution">Solution</a>
@@ -32,98 +32,83 @@
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container">
-            <div class="badge">
-                <span class="badge-dot"></span> Next-Gen AI Automation 2.0
-            </div>
+        <div class="container hero-content">
+            <div class="badge">Next-Gen AI Automation 2.0</div>
             <h1 class="hero-title">
                 Automate Your Workflow in Seconds — <br>
-                <span class="gradient-text">Without Writing a Single Line of Code</span>
+                <span>Without Writing a Single Line of Code</span>
             </h1>
             <p class="hero-subtitle">
                 AIFlow continuously optimizes your business operations, connects your toolstack, and eliminates repetitive tasks so your team can focus on high-impact growth.
             </p>
             <div class="hero-actions">
                 <a href="#cta" class="btn btn-primary btn-large">Get Started for Free</a>
-                <a href="#solution" class="btn btn-secondary btn-large">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    Watch Live Demo
-                </a>
+                <a href="#solution" class="btn btn-secondary btn-large">Watch Live Demo</a>
             </div>
             
             <div class="hero-mockup">
                 <div class="mockup-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
+                    <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                     <span class="mockup-title">app.aiflow.io/dashboard</span>
                 </div>
                 <div class="mockup-body">
                     <div class="mockup-grid">
-                        <div class="card stat-widget">
+                        <div class="card">
                             <span class="card-label">Automated Tasks</span>
                             <span class="card-value">124,890</span>
                             <span class="trend positive">+28.4% this week</span>
                         </div>
-                        <div class="card stat-widget">
+                        <div class="card">
                             <span class="card-label">Hours Saved</span>
                             <span class="card-value">1,420 hrs</span>
                             <span class="trend positive">+$34.2k saved</span>
                         </div>
-                        <div class="card stat-widget">
+                        <div class="card">
                             <span class="card-label">Active AI Agents</span>
                             <span class="card-value">18 Active</span>
                             <span class="trend neutral">Optimal performance</span>
                         </div>
                     </div>
-                    <div class="mockup-banner">
-                        <div class="banner-text">
-                            <h4>🤖 AI Agent Status: Executing Workflow #802</h4>
-                            <p>Syncing CRM leads to Slack & generating customized pitch decks instantly.</p>
-                        </div>
-                        <span class="pill-active">Running</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. SOCIAL PROOF -->
+    <!-- SOCIAL PROOF -->
     <section class="social-proof">
         <div class="container">
             <p class="proof-title">TRUSTED BY INNOVATIVE TEAMS AT LEADING GLOBAL COMPANIES</p>
             <div class="logos-grid">
-                <span class="company-logo">VERTEX</span>
-                <span class="company-logo">NEXUS</span>
-                <span class="company-logo">QUANTUM</span>
-                <span class="company-logo">SYNERGY</span>
-                <span class="company-logo">PULSE AI</span>
+                <span>VERTEX</span>
+                <span>NEXUS</span>
+                <span>QUANTUM</span>
+                <span>SYNERGY</span>
+                <span>PULSE AI</span>
             </div>
         </div>
     </section>
 
-    <!-- 4. KEY FEATURES -->
+    <!-- KEY FEATURES -->
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Key Features</span>
                 <h2>Everything you need to scale intelligent automation</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                    <div class="icon">🚀</div>
                     <h3>Instant Integration</h3>
                     <p>Connect over 200+ popular platforms in less than 2 minutes with pre-built trigger templates.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
+                    <div class="icon">🧠</div>
                     <h3>Smart Reasoning</h3>
                     <p>Powered by top LLMs to understand complex decision trees and handle edge-case workflows autonomously.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
+                    <div class="icon">🔒</div>
                     <h3>Enterprise Security</h3>
                     <p>SOC-2 Type II certified, GDPR compliant, with end-to-end encryption for all enterprise data streams.</p>
                 </div>
@@ -131,15 +116,13 @@
         </div>
     </section>
 
-    <!-- 5. SOLUTION PREVIEW -->
+    <!-- SOLUTION PREVIEW -->
     <section class="solution" id="solution">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Solution Blueprint</span>
                 <h2>Designed for teams that demand velocity</h2>
                 <p>Switch seamlessly between workflows, monitor agent actions, and scale safely.</p>
             </div>
-            
             <div class="interactive-solution-box">
                 <div class="tab-buttons">
                     <button class="tab-btn active">Marketing Ops</button>
@@ -150,71 +133,50 @@
                     <div class="solution-info">
                         <h3>Automate Lead Scoring & Routing</h3>
                         <p>Analyze incoming inquiries, enrich profiles via LinkedIn, generate customized email replies, and schedule calendar invites on autopilot.</p>
-                        <ul class="check-list">
-                            <li>✓ 98.2% Accuracy in Lead Categorization</li>
-                            <li>✓ Sub-second response times for incoming tickets</li>
-                            <li>✓ Automatic CRM synchronization</li>
-                        </ul>
-                    </div>
-                    <div class="solution-preview-graphic">
-                        <div class="node-graphic">
-                            <div class="node">Incoming Lead</div>
-                            <div class="node-line"></div>
-                            <div class="node highlight">AI Classifier</div>
-                            <div class="node-line"></div>
-                            <div class="node">Personalized Email</div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. STATS SECTION -->
+    <!-- STATS -->
     <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">179%</span>
-                    <span class="stat-label">Conversion Rate Lift</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">10M+</span>
-                    <span class="stat-label">Tasks Processed Daily</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">99.9%</span>
-                    <span class="stat-label">System Uptime Guaranteed</span>
-                </div>
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">179%</span>
+                <span class="stat-label">Conversion Rate Lift</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">10M+</span>
+                <span class="stat-label">Tasks Processed Daily</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">System Uptime Guaranteed</span>
             </div>
         </div>
     </section>
 
-    <!-- 7. BENEFITS -->
+    <!-- BENEFITS -->
     <section class="benefits" id="benefits">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Core Benefits</span>
                 <h2>Features tell, but real results sell</h2>
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-bullet">01</div>
                     <h4>Save 15+ Hours Weekly</h4>
                     <p>Eliminate manual data entry, routine copy-pasting, and repetitive status reporting across teams.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-bullet">02</div>
                     <h4>Zero Technical Debt</h4>
                     <p>No code to maintain, no API endpoints breaking at midnight. We handle infrastructure scaling for you.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-bullet">03</div>
                     <h4>Scale Without Headcount</h4>
                     <p>Double your output capacity without doubling operational overhead or hiring expensive specialized roles.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-bullet">04</div>
                     <h4>Real-Time Analytics</h4>
                     <p>Get complete transparency into every action your autonomous agents perform with detailed audit logs.</p>
                 </div>
@@ -222,26 +184,25 @@
         </div>
     </section>
 
-    <!-- 8. HOW IT WORKS -->
+    <!-- HOW IT WORKS -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">How It Works</span>
                 <h2>3 simple steps to launch your first AI Agent</h2>
             </div>
             <div class="steps-grid">
                 <div class="step-card">
-                    <div class="step-number">1</div>
+                    <div class="step-num">1</div>
                     <h3>Connect Apps</h3>
                     <p>Authorize your existing stack with secure 1-click OAuth connectors.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-number">2</div>
+                    <div class="step-num">2</div>
                     <h3>Define Objectives</h3>
                     <p>Describe what you want to accomplish in plain natural language instructions.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-number">3</div>
+                    <div class="step-num">3</div>
                     <h3>Launch & Monitor</h3>
                     <p>Hit activate and watch your agents carry out tasks in real-time with zero friction.</p>
                 </div>
@@ -249,65 +210,46 @@
         </div>
     </section>
 
-    <!-- 9. INTEGRATIONS -->
+    <!-- INTEGRATIONS -->
     <section class="integrations" id="integrations">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Ecosystem</span>
                 <h2>Seamless integration with tools you already love</h2>
             </div>
             <div class="integrations-box">
-                <div class="app-chip">Slack</div>
-                <div class="app-chip">Notion</div>
-                <div class="app-chip">HubSpot</div>
-                <div class="app-chip">Salesforce</div>
-                <div class="app-chip">Zapier</div>
-                <div class="app-chip">Google Workspace</div>
-                <div class="app-chip">GitHub</div>
-                <div class="app-chip">Zendesk</div>
-                <div class="app-chip">Stripe</div>
-                <div class="app-chip">Jira</div>
+                <span class="app-chip">Slack</span>
+                <span class="app-chip">Notion</span>
+                <span class="app-chip">HubSpot</span>
+                <span class="app-chip">Salesforce</span>
+                <span class="app-chip">Zapier</span>
+                <span class="app-chip">Google Workspace</span>
             </div>
         </div>
     </section>
 
-    <!-- 10. TESTIMONIALS -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Social Proof</span>
                 <h2>Loved by operational leaders everywhere</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p class="quote">"AIFlow completely transformed how our sales operations function. What used to take 3 full-time reps now runs automatically in the background."</p>
-                    <div class="author">
-                        <div class="avatar">SA</div>
-                        <div class="author-info">
-                            <strong>Sarah Jenkins</strong>
-                            <span>VP of Ops, TechCorp</span>
-                        </div>
-                    </div>
+                    <p>"AIFlow completely transformed how our sales operations function. What used to take 3 full-time reps now runs automatically."</p>
+                    <strong>Sarah Jenkins — VP of Ops, TechCorp</strong>
                 </div>
                 <div class="testimonial-card">
-                    <p class="quote">"The setup took less than 10 minutes. The ROI was clear within the first 48 hours of deploying our first agent."</p>
-                    <div class="author">
-                        <div class="avatar">MA</div>
-                        <div class="author-info">
-                            <strong>Michael Alex</strong>
-                            <span>Founder, SaaSify</span>
-                        </div>
-                    </div>
+                    <p>"The setup took less than 10 minutes. The ROI was clear within the first 48 hours of deploying our first agent."</p>
+                    <strong>Michael Alex — Founder, SaaSify</strong>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 11. FAQS -->
+    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Got Questions?</span>
                 <h2>Frequently Asked Questions</h2>
             </div>
             <div class="faq-list">
@@ -319,51 +261,23 @@
                     <h4>How safe is my company data?</h4>
                     <p>We enforce strict enterprise data encryption. Your data is never used to train open public models.</p>
                 </div>
-                <div class="faq-item">
-                    <h4>Can I cancel my subscription at any time?</h4>
-                    <p>Yes, you can upgrade, downgrade, or cancel your plan directly from your account settings at any moment without penalty.</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- 12. CALL TO VALUE (CTV) -->
+    <!-- CTA -->
     <section class="ctv" id="cta">
-        <div class="container">
-            <div class="ctv-card">
-                <h2>Ready to unlock 179% higher operational efficiency?</h2>
-                <p>Join over 10,000+ teams automating their repetitive tasks today. Free 14-day trial, no credit card required.</p>
-                <div class="ctv-actions">
-                    <a href="#" class="btn btn-primary btn-large">Start Free 14-Day Trial</a>
-                    <a href="#" class="btn btn-outline btn-large">Book Executive Demo</a>
-                </div>
-            </div>
+        <div class="container ctv-card">
+            <h2>Ready to unlock 179% higher operational efficiency?</h2>
+            <p>Join over 10,000+ teams automating their repetitive tasks today.</p>
+            <a href="#" class="btn btn-primary btn-large">Start Free 14-Day Trial</a>
         </div>
     </section>
 
-    <!-- 13. FOOTER -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-brand">
-                <div class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <span class="logo-text">AIFlow</span>
-                </div>
-                <p>Empowering high-growth teams through autonomous AI automation.</p>
-            </div>
-            <div class="footer-links">
-                <a href="#features">Features</a>
-                <a href="#solution">Solution</a>
-                <a href="#how-it-works">How it Works</a>
-                <a href="#faq">FAQs</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 AIFlow Technologies Inc. All rights reserved.</p>
-            </div>
+            <p>&copy; 2026 AIFlow Technologies Inc. All rights reserved.</p>
         </div>
     </footer>
 
