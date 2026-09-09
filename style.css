@@ -1,4 +1,6 @@
-/* RESET & VARIABLES */
+/* ==========================================================================
+   1. RESET & VARIABLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +29,7 @@ body {
     color: var(--text-main);
     font-family: var(--font-family);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -35,7 +38,9 @@ body {
     padding: 0 20px;
 }
 
-/* NAVBAR */
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
 .navbar {
     background-color: rgba(13, 9, 10, 0.9);
     border-bottom: 1px solid var(--border-color);
@@ -83,7 +88,9 @@ body {
     color: var(--text-main);
 }
 
-/* BUTTONS */
+/* ==========================================================================
+   3. BUTTONS
+   ========================================================================== */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -119,7 +126,9 @@ body {
     font-size: 16px;
 }
 
-/* HERO SECTION */
+/* ==========================================================================
+   4. HERO SECTION & MOCKUP
+   ========================================================================== */
 .hero {
     padding: 80px 0;
     text-align: center;
@@ -236,7 +245,9 @@ body {
 .trend.positive { color: #f87171; }
 .trend.neutral { color: var(--text-muted); }
 
-/* SECTIONS COMMON */
+/* ==========================================================================
+   5. SECTIONS COMMON & GRIDS
+   ========================================================================== */
 section {
     padding: 70px 0;
     border-bottom: 1px solid var(--border-color);
@@ -256,8 +267,7 @@ section {
     color: var(--text-muted);
 }
 
-/* GRIDS */
-.features-grid, .benefits-grid, .steps-grid {
+.features-grid, .benefits-grid, .steps-grid, .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
@@ -376,4 +386,75 @@ section {
     text-align: center;
     color: var(--text-muted);
     font-size: 14px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* الشاشات المتوسطة والصغيرة (التابلت والموبايل - أقل من 768px) */
+@media (max-width: 768px) {
+    
+    .nav-links {
+        display: none; /* إخفاء الروابط العادية على الموبايل لتفادي ازدحام الشريط */
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-large {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mockup-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .logos-grid, .integrations-box {
+        gap: 16px;
+    }
+
+    .ctv-card {
+        padding: 30px 16px;
+    }
+}
+
+/* الشاشات الصغيرة جداً (الموبايل أقل من 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .mockup-body {
+        padding: 16px;
+    }
 }
