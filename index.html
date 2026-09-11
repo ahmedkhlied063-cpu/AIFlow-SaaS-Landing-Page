@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIFlow - Autonomous AI Agents for Modern Teams</title>
+    <title>WattWater - منصة أتمتة الطاقة الشمسية والري الذكي</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,19 +15,17 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">AIFlow</span>
+                <span class="logo-icon">☀️💧</span>
+                <span class="logo-text">WattWater</span>
             </a>
             <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#solution">Solution</a>
-                <a href="#benefits">Benefits</a>
-                <a href="#how-it-works">How it Works</a>
-                <a href="#integrations">Integrations</a>
-                <a href="#faq">FAQs</a>
+                <a href="#how-it-works">كيف تعمل المنصة؟</a>
+                <a href="#telemetry">لوحة المراقبة</a>
+                <a href="#hardware-guide">طريقة التوصيل</a>
+                <a href="#features">المميزات</a>
             </nav>
             <div class="nav-cta">
-                <a href="#cta" class="btn btn-primary">Start Free Trial</a>
+                <a href="#telemetry" class="btn btn-primary">تجربة لوحة التحكم</a>
             </div>
         </div>
     </header>
@@ -35,40 +33,65 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container hero-content">
-            <div class="badge">Next-Gen AI Automation 2.0</div>
+            <div class="badge">🌱 نظام IoT & AI لإدارة المزارع الشمسية ومضخات الري</div>
             <h1 class="hero-title">
-                Automate Your Workflow in Seconds — <br>
-                <span>Without Writing a Single Line of Code</span>
+                تحكم بمحطة الطاقة الشمسية ومضخة الري عن بعد — <br>
+                <span>بذكاء واحترافية وبدون تعقيد</span>
             </h1>
             <p class="hero-subtitle">
-                AIFlow continuously optimizes your business operations, connects your toolstack, and eliminates repetitive tasks so your team can focus on high-impact growth.
+                ربط مباشر لإنفرتر المضخة (VFD) عبر دونجل RS485 بقواعد بيانات سحابية، لمراقبة الأداء لحظياً وأتمتة التشغيل وحماية المكونات من الأعطال.
             </p>
             <div class="hero-actions">
-                <a href="#cta" class="btn btn-primary btn-large">Get Started for Free</a>
-                <a href="#solution" class="btn btn-secondary btn-large">Watch Live Demo</a>
+                <a href="#telemetry" class="btn btn-primary btn-large">بدء التجربة الحية</a>
+                <a href="#hardware-guide" class="btn btn-secondary btn-large">دليل توصيل الهاردوير</a>
             </div>
-            
+        </div>
+    </section>
+
+    <!-- LIVE TELEMETRY & CONTROL DASHBOARD -->
+    <section class="telemetry" id="telemetry">
+        <div class="container">
+            <div class="section-header">
+                <h2>لوحة المراقبة والتحكم المباشر (Modbus RS485 Live)</h2>
+                <p>بيانات حية محاكاة لإنفرتر المضخة مع أزرار تحكم ترسل أوامر للإنفرتر مباشرة</p>
+            </div>
+
             <div class="hero-mockup">
                 <div class="mockup-header">
                     <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                    <span class="mockup-title">app.aiflow.io/dashboard</span>
+                    <span class="mockup-title">Station-01 (RS485 Modbus RTU Status: CONNECTED)</span>
                 </div>
                 <div class="mockup-body">
+                    <!-- CARDS -->
                     <div class="mockup-grid">
                         <div class="card">
-                            <span class="card-label">Automated Tasks</span>
-                            <span class="card-value">124,890</span>
-                            <span class="trend positive">+28.4% this week</span>
+                            <span class="card-label">قدرة الألواح (DC Power)</span>
+                            <span class="card-value" id="solar-power">0.62 kW</span>
+                            <span class="trend positive" id="dc-voltage">جهد المستمر: 380 V</span>
                         </div>
                         <div class="card">
-                            <span class="card-label">Hours Saved</span>
-                            <span class="card-value">1,420 hrs</span>
-                            <span class="trend positive">+$34.2k saved</span>
+                            <span class="card-label">حالة المضخة (Pump Status)</span>
+                            <span class="card-value" id="pump-status">تعمل (50.0 Hz)</span>
+                            <span class="trend positive" id="pump-current">التيار: 1.63 A</span>
                         </div>
                         <div class="card">
-                            <span class="card-label">Active AI Agents</span>
-                            <span class="card-value">18 Active</span>
-                            <span class="trend neutral">Optimal performance</span>
+                            <span class="card-label">معدل التدفق التقديري</span>
+                            <span class="card-value" id="pump-flow">3.2 m³/hr</span>
+                            <span class="trend neutral">حالة الإنفرتر: طبيعي (No Faults)</span>
+                        </div>
+                    </div>
+
+                    <!-- CONTROL PANEL BUTTONS -->
+                    <div class="control-panel">
+                        <h3>أزرار التحكم المباشر بالإنفرتر (Remote Commands):</h3>
+                        <div class="control-actions">
+                            <button class="btn btn-success" id="btn-start">تشغيل المضخة (START)</button>
+                            <button class="btn btn-danger" id="btn-stop">إيقاف المضخة (STOP)</button>
+                            <div class="freq-control">
+                                <label for="freq-input">تعديل التردد (Hz):</label>
+                                <input type="number" id="freq-input" min="10" max="50" value="50">
+                                <button class="btn btn-secondary" id="btn-set-freq">تطبيق التردد</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,16 +99,32 @@
         </div>
     </section>
 
-    <!-- SOCIAL PROOF -->
-    <section class="social-proof">
+    <!-- HARDWARE SETUP GUIDE FOR CUSTOMER -->
+    <section class="hardware-guide" id="hardware-guide">
         <div class="container">
-            <p class="proof-title">TRUSTED BY INNOVATIVE TEAMS AT LEADING GLOBAL COMPANIES</p>
-            <div class="logos-grid">
-                <span>VERTEX</span>
-                <span>NEXUS</span>
-                <span>QUANTUM</span>
-                <span>SYNERGY</span>
-                <span>PULSE AI</span>
+            <div class="section-header">
+                <h2>كيف تتم عملية التوصيل لدى العميل؟ (Hardware Guide)</h2>
+                <p>خطوات بسيطة وسريعة لربط إنفرتر المزرعة بالمنصة دون الحاجة لتعديل الدوائر الكهربائية</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>توصيل دونجل RS485</h3>
+                    <p>يتم توصيل دونجل الاتصال (Wi-Fi/4G Smart Dongle) بطرفي الاتصال <code>A+</code> و <code>B-</code> في منفذ <strong>RS485</strong> المدمج داخل إنفرتر المضخة (VFD).</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>الاتصال بالإنترنت</h3>
+                    <p>يقوم الدونجل بجمع القراءات من مسجلات المودباس (Modbus Registers) للإنفرتر وإرسالها عبر شبكة 4G أو Wi-Fi لسيرفر المنصة باستخدام بروتوكول MQTT/HTTP.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>التحكم والتحليل بالذكاء الاصطناعي</h3>
+                    <p>تستقبل المنصة القراءات، وتعرضها على لوحة التحكم، وتتخذ قرارات التعديل تلقائياً، أو تمكنك من الضغط على أزرار التحكم لإرسال أمر فور للإنفرتر.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -94,192 +133,34 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2>Everything you need to scale intelligent automation</h2>
+                <h2>مميزات النظام التقنية</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="icon">🚀</div>
-                    <h3>Instant Integration</h3>
-                    <p>Connect over 200+ popular platforms in less than 2 minutes with pre-built trigger templates.</p>
+                    <div class="icon">⚡</div>
+                    <h3>بروتوكول Modbus RTU</h3>
+                    <p>قراءة مباشرة لقيم الجهد والتيار والتردد والحرارة من ذاكرة الإنفرتر بدقة عالية.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon">🧠</div>
-                    <h3>Smart Reasoning</h3>
-                    <p>Powered by top LLMs to understand complex decision trees and handle edge-case workflows autonomously.</p>
+                    <h3>تشخيص الأعطال المبكر</h3>
+                    <p>التنبؤ بأعطال الجهد المنخفض، الجفاف (Dry Run)، وارتفاع حرارة المكونات قبل تلف المضخة.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">🔒</div>
-                    <h3>Enterprise Security</h3>
-                    <p>SOC-2 Type II certified, GDPR compliant, with end-to-end encryption for all enterprise data streams.</p>
+                    <div class="icon">📱</div>
+                    <h3>تحكم كامل من الموبايل</h3>
+                    <p>تشغيل وإيقاف وتعديل سرعة التدفق في أي وقت ومن أي مكان في العالم.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOLUTION PREVIEW -->
-    <section class="solution" id="solution">
-        <div class="container">
-            <div class="section-header">
-                <h2>Designed for teams that demand velocity</h2>
-                <p>Switch seamlessly between workflows, monitor agent actions, and scale safely.</p>
-            </div>
-            <div class="interactive-solution-box">
-                <div class="tab-buttons">
-                    <button class="tab-btn active">Marketing Ops</button>
-                    <button class="tab-btn">Sales Automation</button>
-                    <button class="tab-btn">Customer Care</button>
-                </div>
-                <div class="solution-display">
-                    <div class="solution-info">
-                        <h3>Automate Lead Scoring & Routing</h3>
-                        <p>Analyze incoming inquiries, enrich profiles via LinkedIn, generate customized email replies, and schedule calendar invites on autopilot.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">179%</span>
-                <span class="stat-label">Conversion Rate Lift</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">10M+</span>
-                <span class="stat-label">Tasks Processed Daily</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">99.9%</span>
-                <span class="stat-label">System Uptime Guaranteed</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section class="benefits" id="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>Features tell, but real results sell</h2>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h4>Save 15+ Hours Weekly</h4>
-                    <p>Eliminate manual data entry, routine copy-pasting, and repetitive status reporting across teams.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>Zero Technical Debt</h4>
-                    <p>No code to maintain, no API endpoints breaking at midnight. We handle infrastructure scaling for you.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>Scale Without Headcount</h4>
-                    <p>Double your output capacity without doubling operational overhead or hiring expensive specialized roles.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>Real-Time Analytics</h4>
-                    <p>Get complete transparency into every action your autonomous agents perform with detailed audit logs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>3 simple steps to launch your first AI Agent</h2>
-            </div>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-num">1</div>
-                    <h3>Connect Apps</h3>
-                    <p>Authorize your existing stack with secure 1-click OAuth connectors.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">2</div>
-                    <h3>Define Objectives</h3>
-                    <p>Describe what you want to accomplish in plain natural language instructions.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">3</div>
-                    <h3>Launch & Monitor</h3>
-                    <p>Hit activate and watch your agents carry out tasks in real-time with zero friction.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTEGRATIONS -->
-    <section class="integrations" id="integrations">
-        <div class="container">
-            <div class="section-header">
-                <h2>Seamless integration with tools you already love</h2>
-            </div>
-            <div class="integrations-box">
-                <span class="app-chip">Slack</span>
-                <span class="app-chip">Notion</span>
-                <span class="app-chip">HubSpot</span>
-                <span class="app-chip">Salesforce</span>
-                <span class="app-chip">Zapier</span>
-                <span class="app-chip">Google Workspace</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Loved by operational leaders everywhere</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"AIFlow completely transformed how our sales operations function. What used to take 3 full-time reps now runs automatically."</p>
-                    <strong>Sarah Jenkins — VP of Ops, TechCorp</strong>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The setup took less than 10 minutes. The ROI was clear within the first 48 hours of deploying our first agent."</p>
-                    <strong>Michael Alex — Founder, SaaSify</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <h4>Do I need coding knowledge to use AIFlow?</h4>
-                    <p>Not at all! AIFlow is designed 100% no-code. You can build complex triggers using simple plain English prompts.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>How safe is my company data?</h4>
-                    <p>We enforce strict enterprise data encryption. Your data is never used to train open public models.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="ctv" id="cta">
-        <div class="container ctv-card">
-            <h2>Ready to unlock 179% higher operational efficiency?</h2>
-            <p>Join over 10,000+ teams automating their repetitive tasks today.</p>
-            <a href="#" class="btn btn-primary btn-large">Start Free 14-Day Trial</a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2026 AIFlow Technologies Inc. All rights reserved.</p>
+            <p>&copy; 2026 WattWater Solar & AgTech Inc. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
